@@ -13,14 +13,8 @@
     <title>Football Fantasy</title>
 
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/modern-business.css" rel="stylesheet">
@@ -29,6 +23,7 @@
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <link href="css/img_style.css" rel="stylesheet">
+    <link href="css/navbar.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,10 +37,10 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
+            <div class="navbar-header navbar-custom ">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -55,7 +50,7 @@
                 <a class="navbar-brand" href="index.html">Fantasy Football</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1 navright">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="about.html">About</a>
@@ -95,19 +90,15 @@
     </nav>
 
         <section class="main">
-        <div class="container grid-custom">
+        <div class="container">
         <div id= "heading-box">
-            <div id ="heading-box-background">
-
           
             <div class="row">
-                <div class="featured">
-                <div class="fill">
             
-                <div class="col-sm-6 col-xs-12 first-block">
+                <div class="col-md-5 col-md-offset-2">
             
                 <div class="cl">&nbsp;</div>
-                <div class="featured-main">
+                <div class="featured-main heading-box-background">
                     <a href="#"><img id="featured-main-image" src="" alt="" class="img-responsive"/></a>
                     <div class="featured-main-details">
                         <div class="featured-main-details-cnt">
@@ -118,15 +109,15 @@
                 </div>
               </div>
               
-                <div class="col-sm-3 col-xs-6">
-                    <div class="featured-side-item item1">
+                <div class="col-md-3">
+                    <div class="featured-side-item item1 heading-box-background">
                       <div class="cl">&nbsp;</div>
                       <a href="#" class="left"><img src="css/images/featured-side-1.jpg" alt="" class="img-responsive"/></a>
                       <br/>
                       <h3><a href="#">Lorem ipsum dolor sit ame</a></h3>
                       <div class="cl">&nbsp;</div>
                     </div> 
-                    <div class="featured-side-item item2">
+                    <div class="featured-side-item item2 heading-box-background">
                       <div class="cl">&nbsp;</div>
                       <a href="#" class="left"><img src="css/images/featured-side-2.jpg" alt="" class="img-responsive"/></a>
                       <br/>
@@ -135,7 +126,7 @@
                       <div class="cl">&nbsp;</div>
                     </div>
    
-                    <div class="featured-side-item item3">
+                    <div class="featured-side-item item3 heading-box-background">
                       <div class="cl">&nbsp;</div>
                       <a href="#" class="left"><img src="css/images/featured-side-3.jpg" alt="" class="img-responsive"/></a>
                       <br/>
@@ -143,7 +134,7 @@
                       <div class="cl">&nbsp;</div>
                     </div>
 
-                    <div class="featured-side-item item4">
+                    <div class="featured-side-item item4 heading-box-background">
                       <div class="cl">&nbsp;</div>
                       <a href="#" class="left"><img src="css/images/featured-side-4.jpg" alt="" class="img-responsive"/></a>
                       <br/>
@@ -151,9 +142,7 @@
                       <div class="cl">&nbsp;</div>
                     </div>
                 </div>
-                </div>
-                </div>
-             </div>
+        
          </div>
     
             </div>
@@ -176,7 +165,7 @@
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default sidebarnews">
-                    <div class="panel-heading panel-heading-custom">
+                    <div class="panel-heading">
                         <h4><i class="fa fa-fw fa-check"></i> News Spot</h4>
                     </div>
                     <div class="panel-body">
@@ -188,7 +177,7 @@
             </div>
             <div class="col-md-8">
                         <div class="panel panel-default filterable">
-                            <div class="panel-heading panel-heading-custom">
+                            <div class="panel-heading">
                             <h4> Active Leagues</h4>
                             </div>
                             <table class="table">
@@ -238,22 +227,28 @@
                             </table>
                         </div>
             
-        </div>
+            </div>
         <!-- /.row -->
+        </div>
+    </div>
 
+    <footer>
+    <div class="container">
+            <div class="row">
+                <div class="col-lg-12 ">
+                    <p class=col-footer>Copyright &copy; TEAM E</p>
+                </div>
+            </div>
+            </div>
+    </footer>
         
 
         <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; TEAM E</p>
-                </div>
-            </div>
-        </footer>
-
-    </div>
+        
     <!-- /.container -->
+    
+    
+    </body>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -288,8 +283,9 @@
           }
         });
       });
-</script>
+    </script>
 
-</body>
+
+
 
 </html>
