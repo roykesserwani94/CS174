@@ -5,7 +5,7 @@
         <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
         <meta content="utf-8" http-equiv="encoding">
         <style type="text/css">
-            html, body { height: 100%; margin: 10px; padding: 50px; }
+            html, body { height: 100%; }
             h1{
               display: block;
     font-size: 2em;
@@ -20,8 +20,7 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.10/css/dataTables.jqueryui.css"/>
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css"/>
-        <link rel="stylesheet" type="text/css" href="css/style3.css"/>
-        <link href="css/navbar.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/draft_style.css"/>
 
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
@@ -29,31 +28,41 @@
         <script type="text/javascript" src="https://cdn.datatables.net/1.10.10/js/dataTables.jqueryui.js"></script>
         <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/1.10.10/js/dataTables.bootstrap.min.js"></script>
+        <link href="css/navbar.css" rel="stylesheet">
+
     </head>
     <?php include 'header2.php'; ?>
 
     <body>
+    <section class="main">
+      <div class="container">
+      <div class="fill-draft">
+        <div class="row">
+        </div>
+         </div>
+      </div>
+    </section>
      <!-- Page Content -->
     <div class="container">
 
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Draft
-                    
-                </h1>
-                <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a>
+            <p></p>
+            <ol class="breadcrumb">
+                    <li><a href="index.php">Home</a>
                     </li>
                     <li class="active">Draft</li>
                 </ol>
+
+                
             </div>
         </div>
         <!-- /.row -->
 
         <!-- Content Row -->
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-7">
                 <?php
                   /* require_once("config.php");
                     $conn = db2_connect($db2['db'], $db2['user'], $db2['pass']);
@@ -77,16 +86,15 @@
                     }
                     db2_close($conn); */
                   ?>
-                <p>Hello.</p>
+                <h1>Start Drafting</h1>
+                <hr class="style1"/>
                 <script type="text/javascript">
-            var dataSet = [["QB", "", "", "", ""], ["RB", "", "", "", ""], ["RB", "", "", "", ""], ["WR", "", "", "", ""], ["WR", "", "", "", ""], ["WR", "", "", "", ""], ["TE", "", "", "", ""], ["FLEX", "", "", "", ""], ["DST", "", "", "", ""]];
-            var table, lineUpTable;
-            var startingSalary = 20000;
-            var remainingSalary = startingSalary;
-            var averagePerPlayer = startingSalary / 9;
-            $(document).ready(function () {
-
-
+                  var dataSet = [["QB", "", "", "", ""], ["RB", "", "", "", ""], ["RB", "", "", "", ""], ["WR", "", "", "", ""], ["WR", "", "", "", ""], ["WR", "", "", "", ""], ["TE", "", "", "", ""], ["FLEX", "", "", "", ""], ["DST", "", "", "", ""]];
+                  var table, lineUpTable;
+                  var startingSalary = 20000;
+                  var remainingSalary = startingSalary;
+                  var averagePerPlayer = startingSalary / 9;
+                  $(document).ready(function () {
               table = $('table.table').DataTable({
                 ajax: 'arrays.txt',
                 //scrollY: 450,
@@ -255,7 +263,7 @@
               return count;
             }
         </script>
-        <div id="pTable" style="float:left; width:49%;">
+        <div id="pTable">
             <div>
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="active">
@@ -289,29 +297,29 @@
                 </div>
             </div>
         </div>
-        <div id="lineUpTable" style="float:right; width:49%;">
-            <h1>LINEUP</h1>
-            <label id="remSal"></label><br>
-            <label id="avgSalPerPl"></label>
-            <hr />
+        </div>
+        <div class="col-md-5">
+          <div id="lineUpTable">
+            <h1>Your Current Lineup</h1>
+
+
+          <hr class="style1"/>
+            
             <table id="example2" class="display" width="100%"></table>
+            <label class="salary" id="remSal"></label> <br/>
+            <label class="salary" id="avgSalPerPl"></label>
         </div>
       </div>
 
             </div>
+      </div>
         </div>
         <!-- /.row -->
 
-        <hr>
+        <hr class="style1">
 
         <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; TEAM E</p>
-                </div>
-            </div>
-        </footer>
+        <?php include 'footer.php'; ?>
 
     </div>
     <!-- /.container -->

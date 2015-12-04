@@ -1,0 +1,51 @@
+body {
+	  
+  background: #f4f3f5;
+}
+
+@media (max-width: @screen-xs) {
+    body{font-size: 10px;}
+}
+
+@media (max-width: @screen-sm) {
+    body{font-size: 14px;}
+}
+
+.title-header {
+	
+}
+
+.main {
+
+  position:relative;
+  left:0;
+  background: url(images/draft.png) repeat-x 0 0;
+  margin: 0px;
+  width: 100%;
+
+}
+.fill-draft {
+
+	height:300px;
+}
+
+p.col-footer{
+	padding-top:2%;
+}
+
+footer{
+	color:#fff;
+	width: 100%;
+	height:8%;
+	background-color: #1d1c1e;
+	border-top: 3px solid #323133;
+	margin: 0px;
+}
+
+hr.style1{
+	border-top: 1px solid #8c8b8b;
+}
+
+.page-header{
+	border-bottom: 1px solid #8c8b8b;
+}
