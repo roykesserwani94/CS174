@@ -11,37 +11,42 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Fantasy Football</a>
+                <a class="navbar-brand" href="index.php">Fantasy Football</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1 navright">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="index.php">Home</a>
                     </li>
                     <li>
-                        <a href="services.html">Services</a>
+                        <a href="leagues.php">Leagues</a>
                     </li>
                     <li>
                         <a href="contact.html">Contact</a>
                     </li>
-
-
                     
                     <?php if(isset($_SESSION['email'])){
+                        $result = mysql_query("SELECT balance FROM profile");
                         echo "<li>";
-                        echo "<h3 style='letter-spacing: 1px;color:#70A209;text-shadow:1px 1px #282C34;'>Logged in as</h3>";
-                        echo "<h4 style='color:#282C34;'>".$_SESSION['email']."</h4>";
+                        echo "<a>Account Balance: ".$result['balance']."</a>";
+                        echo "</li>";
+                        //login
+                        echo "<li>";
+                        echo "<a>Logged in as: ".$_SESSION['email']."</a>";
                         echo "</li>";
                         echo "<li>";
                         echo "<a href='logout.php' class='signup'>Logout</a>";
                         echo "</li>";
                     } else {
                         echo "<li>";
-                        echo '<a href="loginpage.php" class="login">Login</a>';
+                        echo '<a href ="#">Login to view balance.</a>';
                         echo "</li>";
                         echo "<li>";
-                        echo '<a href="#" class="signup">Signup</a>';
+                        echo "<a href='loginpage.php'>Login</a>";
+                        echo "</li>";
+                        echo "<li>";
+                        echo '<a href="loginpage.php" class="signup">Signup</a>';
                         echo "</li>";
                     }
                           
