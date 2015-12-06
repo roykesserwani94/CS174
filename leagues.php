@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Draft</title>
+        <title>Leagues</title>
         <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
         <meta content="utf-8" http-equiv="encoding">
         <style type="text/css">
@@ -31,12 +31,12 @@
       $password = "";
       $host = "localhost";
 
-    //  $connector = mysql_connect($host,$username,$password)
-    //      or die("Unable to connect");
-   //     echo "Connections are made successfully::";
-   //   $selected = mysql_select_db("fantasyfootball", $connector)
-   //     or die("Unable to connect");
-  //    $result = mysql_query("SELECT title, entries, prize FROM leagues");
+      $connector = mysql_connect($host,$username,$password)
+          or die("Unable to connect");
+        //echo "Connections are made successfully::";
+      $selected = mysql_select_db("fantasyfootball", $connector)
+        or die("Unable to connect");
+      $result = mysql_query("SELECT title, entries,fee, prize FROM leagues");
 
         ?>
 
@@ -56,7 +56,7 @@
                 <ol class="breadcrumb">
                     <li><a href="index.php">Home</a>
                     </li>
-                    <li class="active">Draft</li>
+                    <li class="active">Leagues</li>
                 </ol>     
             </div>
     </div>
@@ -78,8 +78,10 @@
                     <tr class="filters">
                         <th><input type="text" class="form-control" placeholder="#" disabled></th>
                         <th><input type="text" class="form-control" placeholder="Leagues" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="Players" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="Payout" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Fees" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="1st Place Payout" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="2nd Place Payout" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="3rd Place Payout" disabled></th>
                     </tr>
                 </thead>
         
@@ -90,11 +92,17 @@
           <?php
           $a = 1;
           while( $row = mysql_fetch_assoc( $result ) ){
+
+    $payout1 = ($row['entries'] * $row['prize']) * .60;
+    $payout2 = $row['entries'] * $row['prize'] * .30;
+    $payout3 = $row['entries'] * $row['prize'] * .10;
     echo "<tr>";
     echo "<td>" . $a . "</td>";
     echo "<td>" . $row['title'] . "</td>";
-    echo "<td>" . $row['entries'] . "</td>";
-    echo "<td>" . $row['prize'] . "</td>";
+    echo "<td>" . "$" . $row['fee'] . "</td>";
+    echo "<td>" . "$" . $payout1 . "</td>";
+    echo "<td>" . "$" . $payout2 . "</td>";
+    echo "<td>" . "$" . $payout3 . "</td>";
    
     echo "</tr>\n";
     $a++;
