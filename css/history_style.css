@@ -1,5 +1,10 @@
 body {
+	height:100%; /* needed for container min-height */
 	background: #f4f3f5;
+}
+
+html {
+	height:100%; /* needed for container min-height */
 }
 
 @media (max-width: @screen-xs) {
@@ -10,18 +15,18 @@ body {
     body{font-size: 14px;}
 }
 
-.title-header {
-	
-}
 
 .main {
+	padding-top:50px;
+}
 
+.main-container {
   position:relative;
   left:0;
   background: url(images/draft.png) repeat-x 0 0;
+  background-size: contain;
   margin: 0px;
   width: 100%;
-
 }
 .fill-draft {
 
@@ -47,4 +52,19 @@ hr.style1{
 
 .page-header{
 	border-bottom: 1px solid #8c8b8b;
+}
+
+.container {
+	position:relative; /* needed for footer positioning*/
+	margin:0 auto; /* center, not in IE5 */
+
+	height:auto !important; /* real browsers */
+	height:100%; /* IE6: treaded as min-height*/
+
+	min-height:100%; /* real browsers */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }

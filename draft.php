@@ -35,7 +35,7 @@
 
     <body>
     <section class="main">
-      <div class="container">
+      <div class="container main-container">
       <div class="fill-draft">
         <div class="row">
         </div>

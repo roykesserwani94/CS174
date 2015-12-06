@@ -11,15 +11,16 @@ body {
     body{font-size: 14px;}
 }
 
-.title-header {
-	
+.main {
+	padding-top:50px;
 }
 
-.main {
+.main-container{
 
   position:relative;
   left:0;
   background: url(images/draft.png) repeat-x 0 0;
+  background-size: contain;
   margin: 0px;
   width: 100%;
 

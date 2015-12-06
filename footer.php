@@ -5,5 +5,5 @@
                     <p class=col-footer>Copyright &copy; TEAM E</p>
                 </div>
             </div>
-            </div>
-    </footer>
+    </div>
+</footer>
