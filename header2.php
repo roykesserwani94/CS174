@@ -22,9 +22,6 @@
                     <li>
                         <a href="leagues.php">Leagues</a>
                     </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
                     
                     <?php if(isset($_SESSION['email'])){
                         $result = mysql_query("SELECT balance FROM profile");
