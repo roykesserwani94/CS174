@@ -96,10 +96,6 @@
             </div>
         </div>
         </section>
-        
-
-
-    </header>
 
     <!-- Page Content -->
     <div class="container">
@@ -108,8 +104,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    Welcome to Fantasy Football
+                    Welcome to Fantasy Football <a class="btn btn-success" href="league_form.php" role="button" style="float:right;">Create League</a>
                 </h1>
+                
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default sidebarnews">
@@ -129,7 +126,7 @@
                             <h4> Active Leagues</h4>
                             </div>
                             <table class="table">
-
+                                <span id="leagues-div">
                                 <thead>
                                     <tr>
                                         <th class ="table-head"> Contest </th>
@@ -144,10 +141,10 @@
                                             <br/>
                                             <a href="draft.php" class="watch-now">Join Now</a>
                                         </td>
-                                        <td class ="table-text">2/10</td>
-                                        <td class ="table-text">$5000</td>
-                                        <td class ="table-text">$1,000,000</td>
-                                        <td class ="table-text">Sun 3:05p</td>
+                                        <td class ="table-text entries">2/10</td>
+                                        <td class ="table-text entry-fee">$5000</td>
+                                        <td class ="table-text total-prizes">$1,000,000</td>
+                                        <td class ="table-text live-in">Sun 3:05p</td>
                                     </tr>
                                     <tr>
                                         <td class ="table-text">
@@ -172,6 +169,7 @@
                                         <td class ="table-text">Sun 3:05p</td>
                                     </tr>
                                 </tbody>
+                                </span>
                             </table>
                         </div>
             
@@ -207,31 +205,36 @@
     </script>
 
     <script src="js/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $.get("loadhome.php", function( data ) {
+      var JSONObject = JSON.parse(data);
+      $("#featured-main-image").attr("src", JSONObject[0]['image']);
+      $("#featured-main-title").html("" + JSONObject[0]['title']);
+      $("#featured-main-description").text("" + JSONObject[0]['description']);
+      for(i = 1; i < 5; i++){
+        $(".item" + i).find("h3").html("" + JSONObject[i+1]['title']);
+        $(".item" + i).find("img").attr("src", JSONObject[i+1]['image']);
+      }
+    });
 
-    <script>
-      $(document).ready(function(){
-        $.get("loadhome.php", function( data ) {
-          var JSONObject = JSON.parse(data);
-          $("#featured-main-image").attr("src", JSONObject[0]['image']);
-          $("#featured-main-title").html("" + JSONObject[0]['title']);
-          $("#featured-main-description").text("" + JSONObject[0]['description']);
-          for(i = 1; i < 5; i++){
-            $(".item" + i).find("h3").html("" + JSONObject[i+1]['title']);
-            $(".item" + i).find("img").attr("src", JSONObject[i+1]['image']);
-          }
-        });
+    $.get("http://api.fantasy.nfl.com/v1/players/news?format=json", function(data){
+      for(i = 0; i < 6; i++){
+        var headline = data['news'][i]['headline'];
+        var date = data['news'][i]['timestamp'];
+        $("#news").append("<li><small class='date'>" + date + "</small>" +
+                           "<p>" + headline + "</p></li>");
 
-        $.get("http://api.fantasy.nfl.com/v1/players/news?format=json", function(data){
-          for(i = 0; i < 6; i++){
-            var headline = data['news'][i]['headline'];
-            var date = data['news'][i]['timestamp'];
-            $("#news").append("<li><small class='date'>" + date + "</small>" +
-                               "<p>" + headline + "</p></li>");
+      }
+    });
 
-          }
-        });
+    $.get( "ajax.php", { load_leagues: true} )
+      .done(function( data ) {
+        $("#leagues-div").html(data);
       });
-    </script>
+
+  });
+</script>
 
 
 
