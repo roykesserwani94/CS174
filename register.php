@@ -1,5 +1,4 @@
-<?php
-session_start();
+<?php session_start();
 require 'connection.php';
 $errors = array();
 if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['name'])){
@@ -10,7 +9,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['name'])
   $result = mysqli_query($mysqli, $query);
   if (mysqli_num_rows($result) > 0){ echo "user already exists"; }
   else{
-    $query = "INSERT INTO users VALUES (NULL, '$name', '$email', '$password', NULL, NULL, NULL)";
+    $query = "INSERT INTO users VALUES (NULL, '$name', '$email', '$password', 'N/A', NULL, NULL)";
     $result = mysqli_query($mysqli, $query) or die(mysql_error());
     if ($result){
       $lastIdInserted = mysqli_insert_id($mysqli);
